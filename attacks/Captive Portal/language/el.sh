@@ -1,27 +1,35 @@
-#!/bin/bash
-# identifier: Αιχμάλωτη πύλη
+#!/usr/bin/env bash
+# identifier:  Πύλη αιχμαλωσίας
 # description: Δημιουργεί ένα σημείο πρόσβασης "κακό δίδυμο".
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-CaptivePortalInterfaceQuery="Select an interface for the captive portal."
-CaptivePortalStartingInterfaceNotice="Starting captive portal interface..."
-CaptivePortalCannotStartInterfaceError="${CRed}Unable to start captive portal interface$CClr, returning!"
-CaptivePortalStartedInterfaceNotice="${CGrn}Success${CClr}, captive portal interface ready!"
-CaptivePortalStaringAPServiceNotice="Starting Captive Portal access point service..."
-CaptivePortalStaringAPRoutesNotice="Starting Captive Portal access point routes..."
-CaptivePortalStartingDHCPServiceNotice="Starting access point DHCP service as daemon..."
-CaptivePortalStartingDNSServiceNotice="Starting access point DNS service as daemon..."
-CaptivePortalStartingWebServiceNotice="Starting access point captive portal as daemon..."
-CaptivePortalStartingJammerServiceNotice="Starting access point jammer as daemon..."
-CaptivePortalStartingAuthenticatorServiceNotice="Starting authenticator script..."
+CaptivePortalJammerInterfaceQuery="Select an interface for jamming."
+CaptivePortalAccessPointInterfaceQuery="Select an interface for the access point."
+CaptivePortalCannotStartInterfaceError="${CRed}Αδυνατον να ξεκινησω το περιβάλλον της πυλης αιχμαλωσιας$CClr, επιστρεφω!"
+CaptivePortalStaringAPServiceNotice="Ξεκιναω την υπηρεσία για το περιβάλλον της πύλης αιχμαλωσίας..."
+CaptivePortalStaringAPRoutesNotice="Ξεκιναω τις διαδρομες για το περιβάλλον της  πύλης αιχμαλωσίας..."
+CaptivePortalStartingDHCPServiceNotice="Ξεκιναω τις υπηρεσίες του δικτυου πρόσβασης DHCP σαν daemon..."
+CaptivePortalStartingDNSServiceNotice="Ξεκιναω τις υπηρεσιες DNS του δικτύου πρόσβασης σαν daemon..."
+CaptivePortalStartingWebServiceNotice="Ξεκιναω την πυλη αιχμαλωσίας του δικτύου πρόσβασης σαν daemon..."
+CaptivePortalStartingJammerServiceNotice="Ξεκιναω τον παρεμβολεα του δικτύου πρόσβασης σαν daemon..."
+CaptivePortalStartingAuthenticatorServiceNotice="Ξεκιναω το πρόγραμμα επιβεβαίωσης..."
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CaptivePortalAPServiceQuery="Select an access point service"
+CaptivePortalAPServiceHostapdOption="Rogue AP - hostapd (${CGrn}recommended$CClr)"
+CaptivePortalAPServiceAirbaseOption="Rogue AP - airbase-ng (${CYel}slow$CClr)"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 CaptivePortalVerificationMethodQuery="Μέθοδος επαλήθευσης κωδικού πρόσβασης"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-CaptivePortalCertificateSourceQuery="Select SSL certificate source for captive portal"
-CaptivePortalCertificateSourceGenerateOption="Create an SSL certificate"
-CaptivePortalCertificateSourceRescanOption="Detect SSL certificate (${CClr}search again$CGry)"
-CaptivePortalUIQuery="Select a captive portal interface for the rogue network"
-CaptivePortalGenericInterfaceOption="Generic Portal"
+CaptivePortalCertificateSourceQuery="Διαλεξε την πηγη του πιστοποιητικού SSL για την πύλη αιχμαλωσίας."
+CaptivePortalCertificateSourceGenerateOption="Δημιουργηστε ενα πιστοποιητικό SSL"
+CaptivePortalCertificateSourceRescanOption="Ανιχνευση πιστοποιητικού (${CClr}Ψαξε ξανά$CGry)"
+CaptivePortalCertificateSourceDisabledOption="Κανένα (${CYel} απενεργοποίηση SSL$CGry)"
+CaptivePortalUIQuery="Διαλεξε διεπαφή της πύλης αιχμαλωσίας για το κακοβουλο δίκτυο."
+CaptivePortalGenericInterfaceOption="Γενική Πύλη"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CaptivePortalConnectivityQuery="Διαλεξτε τροπο δικτύωσης για το κακόβουλο Δίκτυο."
+CaptivePortalConnectivityDisconnectedOption="Αποσυνδεδεμενο (${CGrn}προτεινωμενο$CClr)"
+CaptivePortalConnectivityEmulatedOption="προσποιητα συνδεδεμενο"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # FLUXSCRIPT END

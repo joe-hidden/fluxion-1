@@ -1,27 +1,35 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # identifier: Gefangenes Portal
 # description: Erstellt einen "bösen Zwilling" Zugangspunkt.
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-CaptivePortalInterfaceQuery="Select an interface for the captive portal."
-CaptivePortalStartingInterfaceNotice="Starting captive portal interface..."
-CaptivePortalCannotStartInterfaceError="${CRed}Unable to start captive portal interface$CClr, returning!"
-CaptivePortalStartedInterfaceNotice="${CGrn}Success${CClr}, captive portal interface ready!"
-CaptivePortalStaringAPServiceNotice="Starting Captive Portal access point service..."
-CaptivePortalStaringAPRoutesNotice="Starting Captive Portal access point routes..."
-CaptivePortalStartingDHCPServiceNotice="Starting access point DHCP service as daemon..."
-CaptivePortalStartingDNSServiceNotice="Starting access point DNS service as daemon..."
-CaptivePortalStartingWebServiceNotice="Starting access point captive portal as daemon..."
-CaptivePortalStartingJammerServiceNotice="Starting access point jammer as daemon..."
-CaptivePortalStartingAuthenticatorServiceNotice="Starting authenticator script..."
+CaptivePortalJammerInterfaceQuery="Select an interface for jamming."
+CaptivePortalAccessPointInterfaceQuery="Select an interface for the access point."
+CaptivePortalCannotStartInterfaceError="${CRed}Es ist nicht möglich den AP zu starten$CClr, rückkehr!"
+CaptivePortalStaringAPServiceNotice="Starte AP Service"
+CaptivePortalStaringAPRoutesNotice="Starte den routing Service "
+CaptivePortalStartingDHCPServiceNotice="Starte den DHCP Service"
+CaptivePortalStartingDNSServiceNotice="Starte den DNS Service."
+CaptivePortalStartingWebServiceNotice="Starte den AP"
+CaptivePortalStartingJammerServiceNotice="Starte mdk4/aireplay als Service"
+CaptivePortalStartingAuthenticatorServiceNotice="Authentifizierungsskript wird gestartet"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CaptivePortalAPServiceQuery="Select an access point service"
+CaptivePortalAPServiceHostapdOption="Rogue AP - hostapd (${CGrn}recommended$CClr)"
+CaptivePortalAPServiceAirbaseOption="Rogue AP - airbase-ng (${CYel}slow$CClr)"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 CaptivePortalVerificationMethodQuery="Methode zum Prüfen des Handshake"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-CaptivePortalCertificateSourceQuery="Select SSL certificate source for captive portal"
-CaptivePortalCertificateSourceGenerateOption="Create an SSL certificate"
-CaptivePortalCertificateSourceRescanOption="Detect SSL certificate (${CClr}search again$CGry)"
-CaptivePortalUIQuery="Select a captive portal interface for the rogue network"
-CaptivePortalGenericInterfaceOption="Generic Portal"
+CaptivePortalCertificateSourceQuery="Wähle die Quelle für das SSL Zertifikat "
+CaptivePortalCertificateSourceGenerateOption="Erstelle das SSL Zertifikat"
+CaptivePortalCertificateSourceRescanOption="Zertifikat wurde nicht erkannt"
+CaptivePortalCertificateSourceDisabledOption="Kein Zertifikat (${CYel}SSL wird deaktiviert $CGry)"
+CaptivePortalUIQuery="Wähle Interface für den unechten AP"
+CaptivePortalGenericInterfaceOption="Gernerische Router Seiten"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+CaptivePortalConnectivityQuery="Wähle die Methode für die Internet verbindung"
+CaptivePortalConnectivityDisconnectedOption="Getrennt (${CGrn}Emfohlen$CClr)"
+CaptivePortalConnectivityEmulatedOption="Emuliert"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # FLUXSCRIPT END
